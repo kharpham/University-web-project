@@ -1,0 +1,32 @@
+:root{
+    --white-color:#fff;
+    --text-color:#333;
+}
+*{
+    box-sizing:inherit;
+
+}
+html{
+    font-size:62.5%;
+    line-height: 1.6rem;
+    font-family: "Roboto", sans-serif;
+}
+
+
+.btn{
+    min-width:142px;
+    height:36px;
+    text-decoration:none;
+    border:none;
+    font-size:1.4rem;
+    padding:0;
+    outline:pointer;
+
+}
+.btn.btn--primary{
+    color:var(--white-color);
+    background-color:var(--primary-color);
+
+}
+
+
