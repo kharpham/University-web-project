@@ -6,6 +6,7 @@ from django.db import IntegrityError
 from .models import User
 # Create your views here.
 def index(request):
+    # Get index page
     if request.user.is_authenticated:
         return render(request,'commerce/index.html') 
     else:
