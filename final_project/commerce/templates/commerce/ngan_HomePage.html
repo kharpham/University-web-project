@@ -1,39 +1,35 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Website GameOn</title>
-    <link rel="stylesheet" href="ngan_HomePage.css" />
-    <!-- Unicons -->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <link rel="stylesheet" href="ngan_HomePage.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav">
-            <a href="#" class="nav_logo">GameOn</a>
-
-            <ul class="nav_item">
-                <li class="nav_item">
-                    <a href="#" class="nav_link">Home</a>
-                </li>
-                <li class="nav_item">
-                    <a href="#" class="nav_link">Category</a>
-                    <ul class="nav_item">
-                        <li><a href="#">BoardGame cho trẻ em</a></li>
-                        <li><a href="#">Puzzle</a></li>
-                        <li><a href="#">CardGame</a></li>
-                        <li><a href="#">Chess</a></li>
-                    </ul>
-                </li>
-            </ul>
+    <header>
+        <nav class="navbar">
+            <div class="nav-logo">
+                <a href="#">GameOn</a>
+            </div>
+            <div class="address">
+                <a href="#" class="deliver">Deliver</a>
+                <div class="map-icon">
+                    <span class="material-symbols-outlined">location_on</span>
+                    <a href="#" class="location">Map</a>
+                </div>
+            </div>
 
             <div class="nav-search">
                 <select class="select-search">
                     <option>All</option>
                     <option>All Categories</option>
+                    <option>Deals hot</option>
                 </select>
                 <input type="text" placeholder="Search GameOn" class="search-input">
                 <div class="search-icon">
@@ -41,72 +37,210 @@
                 </div>
             </div>
 
+            <button class="button_login">Login</button>
 
-            <button class="button" id="form-open">Signup or Login</button>
+            <button class="button_signup">Signup</button>
+
+            <div class="cart">
+                <a href="#">
+                    <span class="material-symbols-outlined cart-icon">shopping_cart</span>
+                </a>
+                <p>Cart</p>
+            </div>
         </nav>
+
+        <div class="banner">
+            <div class="banner-content">
+                <i class="bx bx-menu"></i>
+
+                <div class="nav-links">
+                    <ul class="linksbar">
+                        <li><a href="#">Home</a></li>
+                        <li>
+                            <a href="#">Category</a>
+                            <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+                            <ul class="htmlCss-sub-menu sub-menu">
+                                <li><a href="#">Card Game</a></li>
+                                <li><a href="#">Puzzle Game</a></li>
+                                <li><a href="#">Chess</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Today's Deals</a></li>
+                        <li><a href="#">Customer Service</a></li>
+                        <li><a href="#">Gift Cards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </header>
 
     <!-- Home -->
-    <section class="home">
-        <div class="form_container">
-            <i class="uil uil-times form_close"></i>
-            <!-- Login From -->
-            <div class="form login_form">
-                <form action="#">
-                    <h2>Login</h2>
-
-                    <div class="input_box">
-                        <input type="email" placeholder="Enter your email" required />
-                        <i class="uil uil-envelope-alt email"></i>
+    <section class="hero-section">
+        <div class="container">
+            <span class="close-btn material-symbols-rounded">close</span>
+            <header>Signup Form</header>
+            <div class="progress-bar">
+                <div class="step">
+                    <p>
+                        Name
+                    </p>
+                    <div class="bullet">
+                        <span>1</span>
                     </div>
-                    <div class="input_box">
-                        <input type="password" placeholder="Enter your password" required />
-                        <i class="uil uil-lock password"></i>
-                        <i class="uil uil-eye-slash pw_hide"></i>
+                    <div class="check fas fa-check"></div>
+                </div>
+                <div class="step">
+                    <p>
+                        Contact
+                    </p>
+                    <div class="bullet">
+                        <span>2</span>
                     </div>
-
-                    <div class="option_field">
-                        <span class="checkbox">
-                            <input type="checkbox" id="check" />
-                            <label for="check">Remember me</label>
-                        </span>
-                        <a href="#" class="forgot_pw">Forgot password?</a>
+                    <div class="check fas fa-check"></div>
+                </div>
+                <div class="step">
+                    <p>
+                        Birth
+                    </p>
+                    <div class="bullet">
+                        <span>3</span>
                     </div>
-
-                    <button class="button">Login Now</button>
-
-                    <div class="login_signup">Don't have an account? <a href="#" id="signup">Signup</a></div>
-                </form>
+                    <div class="check fas fa-check"></div>
+                </div>
+                <div class="step">
+                    <p>
+                        Submit
+                    </p>
+                    <div class="bullet">
+                        <span>4</span>
+                    </div>
+                    <div class="check fas fa-check"></div>
+                </div>
             </div>
-
-            <!-- Signup From -->
-            <div class="form signup_form">
+            <div class="form-outer">
                 <form action="#">
-                    <h2>Signup</h2>
-
-                    <div class="input_box">
-                        <input type="email" placeholder="Enter your email" required />
-                        <i class="uil uil-envelope-alt email"></i>
+                    <div class="page slide-page">
+                        <div class="title">
+                            Basic Info:
+                        </div>
+                        <div class="field">
+                            <div class="label">
+                                First Name
+                            </div>
+                            <input type="text">
+                        </div>
+                        <div class="field">
+                            <div class="label">
+                                Last Name
+                            </div>
+                            <input type="text">
+                        </div>
+                        <div class="field">
+                            <button class="firstNext next">Next</button>
+                        </div>
                     </div>
-                    <div class="input_box">
-                        <input type="password" placeholder="Create password" required />
-                        <i class="uil uil-lock password"></i>
-                        <i class="uil uil-eye-slash pw_hide"></i>
+                    <div class="page">
+                        <div class="title">
+                            Contact Info:
+                        </div>
+                        <div class="field">
+                            <div class="label">
+                                Email Address
+                            </div>
+                            <input type="text">
+                        </div>
+                        <div class="field">
+                            <div class="label">
+                                Phone Number
+                            </div>
+                            <input type="Number">
+                        </div>
+                        <div class="field btns">
+                            <button class="prev-1 prev">Previous</button>
+                            <button class="next-1 next">Next</button>
+                        </div>
                     </div>
-                    <div class="input_box">
-                        <input type="password" placeholder="Confirm password" required />
-                        <i class="uil uil-lock password"></i>
-                        <i class="uil uil-eye-slash pw_hide"></i>
+                    <div class="page">
+                        <div class="title">
+                            Date of Birth:
+                        </div>
+                        <div class="field">
+                            <div class="label">
+                                Date
+                            </div>
+                            <input type="text">
+                        </div>
+                        <div class="field">
+                            <div class="label">
+                                Gender
+                            </div>
+                            <select>
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="field btns">
+                            <button class="prev-2 prev">Previous</button>
+                            <button class="next-2 next">Next</button>
+                        </div>
                     </div>
-
-                    <button class="button">Signup Now</button>
-
-                    <div class="login_signup">Already have an account? <a href="#" id="login">Login</a></div>
+                    <div class="page">
+                        <div class="title">
+                            Login Details:
+                        </div>
+                        <div class="field">
+                            <div class="label">
+                                Username
+                            </div>
+                            <input type="text">
+                        </div>
+                        <div class="field">
+                            <div class="label">
+                                Password
+                            </div>
+                            <input type="password">
+                        </div>
+                        <div class="field btns">
+                            <button class="prev-3 prev">Previous</button>
+                            <button class="submit">Submit</button>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
     </section>
 
+    <footer>
+        <a href="#" class="footer-title">
+            Back to top
+        </a>
+        <div class="footer-items">
+            <ul>
+                <h3>Get to Know Us</h3>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Flash Sales</a></li>
+                <li><a href="#">Security policy</a></li>
+            </ul>
+            <ul>
+                <h3>Connect with Us</h3>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+            </ul>
+            <ul>
+                <h3>Payment</h3>
+                <h3>Shipping unit</h3>
+            </ul>
+            <ul>
+                <h3>Let Us Help You</h3>
+                <li><a href="#">Your Account</a></li>
+                <li><a href="#">Return Centre</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </div>
+    </footer>
     <script src="ngan_HomePage.js"></script>
 </body>
 </html>
