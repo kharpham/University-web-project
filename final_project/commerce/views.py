@@ -3,12 +3,15 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
 from django.db import IntegrityError
-from .models import User
+from .models import User, Item
 # Create your views here.
 def index(request):
     # Get index page
+    items = Item.objects.all()
     if request.user.is_authenticated:
-        return render(request,'commerce/index.html') 
+        return render(request,'commerce/index.html', {
+            "items": items,
+        }) 
     else:
         return HttpResponseRedirect(reverse('login'))
 

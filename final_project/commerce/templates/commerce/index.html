@@ -6,6 +6,12 @@
 
 {% block body %}
     Welcome to CardzPuzzle
-
+    <div id="list">
+        {% for item in items %}
+            <div>
+                <img src={{item.image_URL}} alt={{item.name}} class="items">
+            </div>  
+        {% endfor %}
+    </div>
 {% endblock %}
 
