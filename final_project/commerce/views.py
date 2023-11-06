@@ -4,16 +4,19 @@ from django.shortcuts import render
 from django.urls import reverse
 from django.db import IntegrityError
 from .models import User, Item
+from django.contrib.auth.decorators import login_required
 # Create your views here.
+
+
 def index(request):
     # Get index page
     items = Item.objects.all()
-    if request.user.is_authenticated:
-        return render(request,'commerce/index.html', {
-            "items": items,
-        }) 
-    else:
-        return HttpResponseRedirect(reverse('login'))
+    # if request.user.is_authenticated:
+    return render(request,'commerce/index.html', {
+        "items": items,
+    }) 
+    # else:
+    #     return HttpResponseRedirect(reverse('login'))
 
 def login_view(request):
     if request.method == "POST":
@@ -59,4 +62,47 @@ def register_view(request):
 def logout_view(request):
     logout(request)
     return HttpResponseRedirect(reverse('index'))
+
+
+@login_required
+def view_item(request, item_id):
+    try:
+        item = Item.objects.get(id=item_id)
+        shopping_cart = request.user.shopping_cart.all()
+    except Item.DoesNotExist:
+        return HttpResponse("Item not found")
+    return render(request, "commerce/view_item.html", {
+        "item": item,
+        "shopping_cart": shopping_cart,
+    })
+
+@login_required
+def shopping_cart(request):
+    items = request.user.shopping_cart.all()
+    return render(request, 'commerce/shopping_cart.html', {
+        "items": items,
+    })
+
+@login_required
+def add_item(request, item_id):
+    try: 
+        item = Item.objects.get(id=item_id)
+    except Item.DoesNotExist:
+        return HttpResponse("Item not found")
+    request.user.shopping_cart.add(item)
+    request.user.save()
+    return HttpResponseRedirect(reverse('view_item', args=[item.id]))
+
+@login_required
+def remove_item(request, item_id):
+    try: 
+        item = Item.objects.get(id=item_id)
+    except Item.DoesNotExist:
+        return HttpResponse("Item not found")
+    request.user.shopping_cart.remove(item)
+    request.user.save()
+    return HttpResponseRedirect(reverse('view_item', args=[item.id]))
+
+
+
 

@@ -1,18 +1,19 @@
 {% extends 'commerce/layout.html' %}
 
 {% block title %}
-    CardzPuzzle: HomePage
+    GameOn: HomePage
 {% endblock %}
 
 {% block body %}
-    Welcome to CardzPuzzle
     <div id="item_list">
         {% for item in items %}
-            <div class="item">
-                <img src={{item.image_URL}} alt={{item.name}} class="item_img">
-                {{item.name}} <br>
-                <span class="item_price">{{item.price}} VND</span>
-            </div>  
+            <a href="{% url 'view_item' item.id %}">
+                <div class="item">
+                    <div class="image_container"><img src={{item.image_URL}} alt={{item.name}} class="item_img"></div>
+                    <p class="item_name">{{item.name}}</p> <br>
+                    <span class="item_price">{{item.price}} VND</span>
+                </div>  
+            </a>
         {% endfor %}
     </div>
 {% endblock %}

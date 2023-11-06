@@ -1,0 +1,24 @@
+{% extends 'commerce/layout.html' %}
+
+{% block title %}
+    GameOn: Shopping Cart
+{% endblock %}
+
+{% block body %}
+    <div id="item_list">
+        {% if not items %}
+            <h3>There's no item in shopping cart yet</h3>
+        {% else %}
+            {% for item in items %}
+                <a href="{% url 'view_item' item.id %}">
+                    <div class="item">
+                        <div class="image_container"><img src={{item.image_URL}} alt={{item.name}} class="item_img"></div>
+                        <p class="item_name">{{item.name}}</p> <br>
+                        <span class="item_price">{{item.price}} VND</span>
+                    </div>  
+                </a>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}
+

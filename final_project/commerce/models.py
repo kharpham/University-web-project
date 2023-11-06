@@ -20,6 +20,7 @@ class Item(models.Model):
     available = models.BooleanField()
     stock = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(200)])
     image_URL = models.URLField(_("Image URL(Optinonal)"),blank=True, max_length=200)
+    shoppers = models.ManyToManyField(User, blank=True, related_name="shopping_cart")
     def save(self, *args, **kwargs):
         if self.stock == 0:
             self.available = False
