@@ -16,5 +16,30 @@
             </a>
         {% endfor %}
     </div>
+    <hr>
+    <nav aria-label="...">
+        <ul class="pagination">
+            {% if items.has_previous %}
+            <li class="page_item">
+                <a class="page-link" href="?page=1">&laquo; First</a>
+            </li>
+            <li class="page_item">
+                <a class="page-link" href="?page={{items.previous_page_number}}">{{items.previous_page_number}}</a>
+            </li>
+            {% endif %}
+            <li class="page_item active">
+                <a class="page_link" href="?page={{items.number}}">{{items.number}}</a>
+            </li>
+            {% if items.has_next %}
+            <li class="page_item">
+                <a class="page_link" href="?page={{items.next_page_number}}" >{{items.next_page_number}}</a>
+            </li>
+            <li class="page_item">
+                <a class="page_link" href="?page={{items.paginator.num_pages}}">Last &raquo;</a>
+            </li>
+            {% endif %}
+        </ul>
+      </nav>
+
 {% endblock %}
 

@@ -5,12 +5,18 @@ from django.urls import reverse
 from django.db import IntegrityError
 from .models import User, Item
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
+
 # Create your views here.
 
 
 def index(request):
     # Get index page
-    items = Item.objects.all()
+    # Set up Pagination
+    p = Paginator(Item.objects.all(), 12)
+    page = request.GET.get('page')
+    items = p.get_page(page)
+
     # if request.user.is_authenticated:
     return render(request,'commerce/index.html', {
         "items": items,
