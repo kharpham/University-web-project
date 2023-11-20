@@ -110,5 +110,9 @@ def remove_item(request, item_id):
     return HttpResponseRedirect(reverse('view_item', args=[item.id]))
 
 
+def ngoc_payment(request):
+    return render(request, 'commerce/styleheader.')
+    
+
 
 
