@@ -109,6 +109,11 @@ def remove_item(request, item_id):
     request.user.save()
     return HttpResponseRedirect(reverse('view_item', args=[item.id]))
 
+def loi_login(request):
+    return render(request,'commerce/loi_login.html')
 
+def loi_aboutus(request):
+    return render(request, 'commerce/loi_aboutus.html')
 
-
+def loi_register(request):
+    return render(request, 'commerce/loi_register.html')
