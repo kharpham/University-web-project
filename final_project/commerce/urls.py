@@ -13,4 +13,5 @@ urlpatterns = [
     path("loi_login/", views.loi_login, name="loi_login"),
     path("loi_aboutus/", views.loi_aboutus, name="loi_aboutus"),
     path("loi_register/", views.loi_register, name="loi_register"),
+    path('ngoc_payment/', views.ngoc_payment, name='ngoc_payment'),     
 ]
