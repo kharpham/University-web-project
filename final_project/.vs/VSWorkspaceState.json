@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\commerce",
+    "\\commerce\\static",
+    "\\commerce\\static\\commerce",
+    "\\commerce\\templates",
+    "\\commerce\\templates\\commerce"
+  ],
+  "SelectedNode": "\\commerce\\templates\\commerce\\HomePage.html",
+  "PreviewInSolutionExplorer": false
+}
